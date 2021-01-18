@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.1k 字
+      2.2k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      27
+      29
        分钟
     </span>
   
@@ -444,7 +444,7 @@
 <p>练习题：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//无精度损失</span><br><span class="hljs-keyword">long</span> l1 = <span class="hljs-number">123L</span>;<br><span class="hljs-keyword">short</span> s1 = (<span class="hljs-keyword">short</span>) l1;<br>System.out.println(s1);<span class="hljs-comment">//123</span><br><span class="hljs-comment">//精度损失1</span><br><span class="hljs-keyword">double</span> d1 = <span class="hljs-number">16.2</span>;<br><span class="hljs-keyword">int</span> i1 = (<span class="hljs-keyword">int</span>) d1;<br>System.out.println(i1);<span class="hljs-comment">//16</span><br><span class="hljs-comment">//精度损失2</span><br><span class="hljs-keyword">int</span> i2 = <span class="hljs-number">128</span>;<br><span class="hljs-keyword">byte</span> b1 = (<span class="hljs-keyword">byte</span>) i2;<br>System.out.println(b1);<span class="hljs-comment">//-128</span><br></code></pre></td></tr></table></figure>
 <h2 id="类型转换的特殊情况"><a href="#类型转换的特殊情况" class="headerlink" title="类型转换的特殊情况"></a>类型转换的特殊情况</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 情况1</span><br><span class="hljs-comment">// long赋值 如果忘记加 l或L 在不超过int范围情况下不会出错 超出就会编译错误</span><br><span class="hljs-keyword">long</span> l1 = <span class="hljs-number">128</span>;<br>System.out.println(judgeType(l1));<span class="hljs-comment">//l1仍为long类型</span><br><span class="hljs-comment">// 编译报错 过大的整数</span><br><span class="hljs-comment">// long l2 = 1239801283091823;</span><br><span class="hljs-comment">// 编译通过</span><br><span class="hljs-keyword">long</span> l2 = <span class="hljs-number">1239801283091823L</span>;<br><span class="hljs-comment">// 不加f或F报错 浮点型常量默认为double</span><br><span class="hljs-keyword">float</span> f1 = <span class="hljs-number">12.3F</span>;<br><br><span class="hljs-comment">// 情况2</span><br><span class="hljs-keyword">byte</span> b1 = <span class="hljs-number">12</span>;<br><span class="hljs-comment">// 编译报错 整型常量默认为int</span><br><span class="hljs-comment">//byte b2 = b1 + 1;</span><br></code></pre></td></tr></table></figure>
-<h3 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h3><ul>
+<h2 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h2><ul>
 <li><code>String不是基本数据类型，属于引用数据类型。</code></li>
 <li>使用方式与基本数据类型一致。例如:String str = “abcd”。</li>
 <li>一个字符串可以串接另一个字符串，也可以直接串接其他类型的数据。例如:<ul>
@@ -457,6 +457,40 @@
 <p>练习题</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//练习1</span><br><span class="hljs-keyword">char</span> c = <span class="hljs-string">&#x27;a&#x27;</span>;<br><span class="hljs-keyword">int</span> num = <span class="hljs-number">10</span>;<br>String str = <span class="hljs-string">&quot;hello&quot;</span>;<br>System.out.println(c + num + str);<span class="hljs-comment">// 107hello</span><br>System.out.println(c + str + num);<span class="hljs-comment">// ahello10</span><br>System.out.println(c + (num + str));<span class="hljs-comment">// a10hello</span><br>System.out.println((c + num) + str);<span class="hljs-comment">// 107hello</span><br>System.out.println(str + num + c);<span class="hljs-comment">// hello10a</span><br><br><span class="hljs-comment">//练习2</span><br><span class="hljs-comment">//输出 *  *</span><br>System.out.println(<span class="hljs-string">&quot;*   *&quot;</span>);<span class="hljs-comment">//true</span><br>System.out.println(<span class="hljs-string">&#x27;*&#x27;</span> + <span class="hljs-string">&#x27;\t&#x27;</span> + <span class="hljs-string">&#x27;*&#x27;</span>);<span class="hljs-comment">//false</span><br>System.out.println(<span class="hljs-string">&#x27;*&#x27;</span> + <span class="hljs-string">&quot;\t&quot;</span> + <span class="hljs-string">&#x27;*&#x27;</span>);<span class="hljs-comment">//true</span><br>System.out.println(<span class="hljs-string">&#x27;*&#x27;</span> + <span class="hljs-string">&#x27;\t&#x27;</span> + <span class="hljs-string">&quot;*&quot;</span>);<span class="hljs-comment">//false</span><br>System.out.println(<span class="hljs-string">&#x27;*&#x27;</span> + (<span class="hljs-string">&#x27;\t&#x27;</span> + <span class="hljs-string">&quot;*&quot;</span>));<span class="hljs-comment">//true</span><br><br><span class="hljs-comment">//练习3</span><br><span class="hljs-comment">//String str1 = 4;//判断对错</span><br>String str2 = <span class="hljs-number">3.5f</span> + <span class="hljs-string">&quot;&quot;</span>;<span class="hljs-comment">//判断对错</span><br>System.out.println(str2);<span class="hljs-comment">//3.5f</span><br>System.out.println(<span class="hljs-number">3</span> + <span class="hljs-number">4</span> + <span class="hljs-string">&quot;Hello!&quot;</span>);<span class="hljs-comment">//7Hello!</span><br>System.out.println(<span class="hljs-string">&quot;Hello!&quot;</span> + <span class="hljs-number">3</span> + <span class="hljs-number">4</span>);<span class="hljs-comment">//Hello!34</span><br>System.out.println(<span class="hljs-string">&#x27;a&#x27;</span> + <span class="hljs-number">1</span> + <span class="hljs-string">&quot;Hello!&quot;</span>);<span class="hljs-comment">//98Hello!</span><br>System.out.println(<span class="hljs-string">&quot;Hello!&quot;</span> + <span class="hljs-string">&#x27;a&#x27;</span> +<span class="hljs-number">1</span>);<span class="hljs-comment">//Hello!a1</span><br></code></pre></td></tr></table></figure>
 <h1 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h1><p><code>世界上有10种人，认识和不认识二进制的</code></p>
+<h2 id="进制的表示"><a href="#进制的表示" class="headerlink" title="进制的表示"></a>进制的表示</h2><ul>
+<li>二进制(binary):0,1 ，满2进1.以0b或0B开头。 </li>
+<li>十进制(decimal):0-9 ，满10进1。 </li>
+<li>八进制(octal):0-7 ，满8进1. 以数字0开头表示。</li>
+<li>十六进制(hex):0-9及A-F，满16进1. 以0x或0X开头表示。此处的A-F不区分大小写。 如:0x21AF +1= 0X21B0</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>0000 —— 0</strong></th>
+<th><strong>0100 —— 4</strong></th>
+<th><strong>1000 —— 8</strong></th>
+<th><strong>1100 —— C</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>0001 —— 1</strong></td>
+<td><strong>0101 —— 5</strong></td>
+<td><strong>1001 —— 9</strong></td>
+<td><strong>1101 —— D</strong></td>
+</tr>
+<tr>
+<td><strong>0010 —— 2</strong></td>
+<td><strong>0110 —— 6</strong></td>
+<td><strong>1010 —— A</strong></td>
+<td><strong>1110 —— E</strong></td>
+</tr>
+<tr>
+<td><strong>0011 —— 3</strong></td>
+<td><strong>0111 —— 7</strong></td>
+<td><strong>1011 —— B</strong></td>
+<td><strong>1111 —— F</strong></td>
+</tr>
+</tbody></table>
 
             </div>
             <hr>
