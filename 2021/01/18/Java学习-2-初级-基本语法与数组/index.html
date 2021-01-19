@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.2k 字
+      3.5k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      29
+      47
        分钟
     </span>
   
@@ -454,7 +454,7 @@
 </ul>
 </li>
 </ul>
-<p>练习题</p>
+<p>练习题：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//练习1</span><br><span class="hljs-keyword">char</span> c = <span class="hljs-string">&#x27;a&#x27;</span>;<br><span class="hljs-keyword">int</span> num = <span class="hljs-number">10</span>;<br>String str = <span class="hljs-string">&quot;hello&quot;</span>;<br>System.out.println(c + num + str);<span class="hljs-comment">// 107hello</span><br>System.out.println(c + str + num);<span class="hljs-comment">// ahello10</span><br>System.out.println(c + (num + str));<span class="hljs-comment">// a10hello</span><br>System.out.println((c + num) + str);<span class="hljs-comment">// 107hello</span><br>System.out.println(str + num + c);<span class="hljs-comment">// hello10a</span><br><br><span class="hljs-comment">//练习2</span><br><span class="hljs-comment">//输出 *  *</span><br>System.out.println(<span class="hljs-string">&quot;*   *&quot;</span>);<span class="hljs-comment">//true</span><br>System.out.println(<span class="hljs-string">&#x27;*&#x27;</span> + <span class="hljs-string">&#x27;\t&#x27;</span> + <span class="hljs-string">&#x27;*&#x27;</span>);<span class="hljs-comment">//false</span><br>System.out.println(<span class="hljs-string">&#x27;*&#x27;</span> + <span class="hljs-string">&quot;\t&quot;</span> + <span class="hljs-string">&#x27;*&#x27;</span>);<span class="hljs-comment">//true</span><br>System.out.println(<span class="hljs-string">&#x27;*&#x27;</span> + <span class="hljs-string">&#x27;\t&#x27;</span> + <span class="hljs-string">&quot;*&quot;</span>);<span class="hljs-comment">//false</span><br>System.out.println(<span class="hljs-string">&#x27;*&#x27;</span> + (<span class="hljs-string">&#x27;\t&#x27;</span> + <span class="hljs-string">&quot;*&quot;</span>));<span class="hljs-comment">//true</span><br><br><span class="hljs-comment">//练习3</span><br><span class="hljs-comment">//String str1 = 4;//判断对错</span><br>String str2 = <span class="hljs-number">3.5f</span> + <span class="hljs-string">&quot;&quot;</span>;<span class="hljs-comment">//判断对错</span><br>System.out.println(str2);<span class="hljs-comment">//3.5f</span><br>System.out.println(<span class="hljs-number">3</span> + <span class="hljs-number">4</span> + <span class="hljs-string">&quot;Hello!&quot;</span>);<span class="hljs-comment">//7Hello!</span><br>System.out.println(<span class="hljs-string">&quot;Hello!&quot;</span> + <span class="hljs-number">3</span> + <span class="hljs-number">4</span>);<span class="hljs-comment">//Hello!34</span><br>System.out.println(<span class="hljs-string">&#x27;a&#x27;</span> + <span class="hljs-number">1</span> + <span class="hljs-string">&quot;Hello!&quot;</span>);<span class="hljs-comment">//98Hello!</span><br>System.out.println(<span class="hljs-string">&quot;Hello!&quot;</span> + <span class="hljs-string">&#x27;a&#x27;</span> +<span class="hljs-number">1</span>);<span class="hljs-comment">//Hello!a1</span><br></code></pre></td></tr></table></figure>
 <h1 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h1><p><code>世界上有10种人，认识和不认识二进制的</code></p>
 <h2 id="进制的表示"><a href="#进制的表示" class="headerlink" title="进制的表示"></a>进制的表示</h2><ul>
@@ -491,7 +491,195 @@
 <td><strong>1111 —— F</strong></td>
 </tr>
 </tbody></table>
-
+<h2 id="二进制"><a href="#二进制" class="headerlink" title="二进制"></a>二进制</h2><ul>
+<li><p>Java整数常量默认是int类型，当用二进制定义整数时，其第32位是符号位; 当是long类型时，二进制默认占64位，第64位是符号位。</p>
+</li>
+<li><p>二进制的整数有如下三种形式: </p>
+<ul>
+<li>原码:直接将一个数值换成二进制数。最高位是符号位。</li>
+<li>负数的反码:是对原码按位取反，只是最高位(符号位)确定为1。 </li>
+<li>负数的补码:其反码加1。</li>
+</ul>
+</li>
+<li><p>计算机以二进制补码的形式保存所有的整数：</p>
+<ul>
+<li>正数的原码、反码、补码都相同。</li>
+<li>负数的补码是其反码+1。</li>
+</ul>
+</li>
+</ul>
+<p>举个🌰：</p>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs tap">-14: <br>1<span class="hljs-number"> 0 </span>0<span class="hljs-number"> 0 </span>1<span class="hljs-number"> 1 </span>1 0（原码）<br>1<span class="hljs-number"> 1 </span>1<span class="hljs-number"> 1 </span>0<span class="hljs-number"> 0 </span>0 1（反码=原码除符号位外取反）<br>1<span class="hljs-number"> 1 </span>1<span class="hljs-number"> 1 </span>0<span class="hljs-number"> 0 </span>1 0（补码=反码+1）<br><br>14:  <br>0<span class="hljs-number"> 0 </span>0<span class="hljs-number"> 0 </span>1<span class="hljs-number"> 1 </span>1 0（原码、补码、反码）<br><br>byte的范围(一个字节8位) -128~127<br><br>127:<br>0<span class="hljs-number"> 1 </span>1<span class="hljs-number"> 1 </span>1<span class="hljs-number"> 1 </span>1 1（原码、补码、反码）<br><br>-127:<br>1<span class="hljs-number"> 1 </span>1<span class="hljs-number"> 1 </span>1<span class="hljs-number"> 1 </span>1 1（源码）<br>1<span class="hljs-number"> 0 </span>0<span class="hljs-number"> 0 </span>0<span class="hljs-number"> 0 </span>0 0（反码）<br>1<span class="hljs-number"> 0 </span>0<span class="hljs-number"> 0 </span>0<span class="hljs-number"> 0 </span>0 1（补码）<br><br>-128:<br>1<span class="hljs-number"> 0 </span>0<span class="hljs-number"> 0 </span>0<span class="hljs-number"> 0 </span>0 0（补码）<br><br>由此可解释强制类型转换中的精度损失2<br>int i1 = 128;<br>byte b1 = (byte) i1;<br>System.out.println(b1);//-128<br><br>int 4个字节 32位<br>0000<span class="hljs-number"> 0000 </span>0000<span class="hljs-number"> 0000 </span>0000<span class="hljs-number"> 0000 </span>1000 0000（128补码）<br>byte 1个字节 8位 <br>1000 0000（-128补码）<br></code></pre></td></tr></table></figure>
+<h2 id="进制的转换"><a href="#进制的转换" class="headerlink" title="进制的转换"></a>进制的转换</h2><ul>
+<li>十进制 二进制互转。<ul>
+<li>二进制转成十进制 乘以2的幂数。</li>
+<li>十进制转成二进制 除以2取余数。</li>
+</ul>
+</li>
+<li>二进制 八进制互转。</li>
+<li>二进制 十六进制互转。</li>
+<li>十进制 八进制互转。</li>
+<li>十进制 十六进制互转。</li>
+</ul>
+<p><img src="/images/Java%E5%AD%A6%E4%B9%A0-2-%E5%88%9D%E7%BA%A7-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E4%B8%8E%E6%95%B0%E7%BB%84/image-20210119132949183.png" srcset="/img/loading.gif" alt="image-20210119132949183"></p>
+<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><h2 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h2><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>运算</th>
+<th>注意事项</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>正号</td>
+<td></td>
+</tr>
+<tr>
+<td>-</td>
+<td>负号</td>
+<td></td>
+</tr>
+<tr>
+<td>+</td>
+<td>加</td>
+<td></td>
+</tr>
+<tr>
+<td>-</td>
+<td>减</td>
+<td></td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘</td>
+<td></td>
+</tr>
+<tr>
+<td>/</td>
+<td>除</td>
+<td></td>
+</tr>
+<tr>
+<td>%</td>
+<td>取余</td>
+<td>取余操作结果符号和被模数符号有关</td>
+</tr>
+<tr>
+<td>++（前）</td>
+<td>自增（前）：先运算后取值</td>
+<td>自增操作不会改变数据的数据类型</td>
+</tr>
+<tr>
+<td>++（后）</td>
+<td>自增（后）：先取值后运算</td>
+<td></td>
+</tr>
+<tr>
+<td>–（前）</td>
+<td>自减（前）：先运算后取值</td>
+<td></td>
+</tr>
+<tr>
+<td>–（后）</td>
+<td>自减（后）：先取值后运算</td>
+<td></td>
+</tr>
+<tr>
+<td>+</td>
+<td>字符串连接</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>练习题：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 除法</span><br><span class="hljs-keyword">int</span> num1 = <span class="hljs-number">12</span>;<br><span class="hljs-keyword">int</span> num2 = <span class="hljs-number">5</span>;<br><span class="hljs-keyword">int</span> result1 = num1 / num2;<br>System.out.println(result1);<span class="hljs-comment">//2</span><br><span class="hljs-keyword">int</span> result2 = num1 / num2 * num2;<br>System.out.println(result2);<span class="hljs-comment">//10</span><br><span class="hljs-keyword">double</span> result3 = num1 / num2;<br>System.out.println(result3);<span class="hljs-comment">//2.0</span><br><span class="hljs-keyword">double</span> result4 = <span class="hljs-number">1.0</span> * num1 / num2;<br>System.out.println(result4);<span class="hljs-comment">//2.4</span><br><br><span class="hljs-comment">// 取余</span><br><span class="hljs-comment">// 结果的负号与被模数的符号相同</span><br><span class="hljs-keyword">int</span> m1 = <span class="hljs-number">12</span>;<br><span class="hljs-keyword">int</span> n1 = <span class="hljs-number">5</span>;<br>System.out.println(<span class="hljs-string">&quot;m1 % n1 = &quot;</span> + m1 % n1);<span class="hljs-comment">//2</span><br><span class="hljs-keyword">int</span> m2 = -<span class="hljs-number">12</span>;<br><span class="hljs-keyword">int</span> n2 = <span class="hljs-number">5</span>;<br>System.out.println(<span class="hljs-string">&quot;m2 % n2 = &quot;</span> + m2 % n2);<span class="hljs-comment">//-2</span><br><span class="hljs-keyword">int</span> m3 = <span class="hljs-number">12</span>;<br><span class="hljs-keyword">int</span> n3 = -<span class="hljs-number">5</span>;<br>System.out.println(<span class="hljs-string">&quot;m3 % n3 = &quot;</span> + m3 % n3);<span class="hljs-comment">//2</span><br><span class="hljs-keyword">int</span> m4 = -<span class="hljs-number">12</span>;<br><span class="hljs-keyword">int</span> n4 = -<span class="hljs-number">5</span>;<br>System.out.println(<span class="hljs-string">&quot;m4 % n4 = &quot;</span> + m4 % n4);<span class="hljs-comment">//-2</span><br><br><span class="hljs-comment">//  ++/--</span><br><span class="hljs-keyword">short</span> s1 = <span class="hljs-number">10</span>;<br><span class="hljs-keyword">short</span> s2 = s1++;<br><span class="hljs-keyword">short</span> s3 = ++s1;<br>System.out.println(s2);<span class="hljs-comment">//10</span><br>System.out.println(s3);<span class="hljs-comment">//12</span><br><span class="hljs-keyword">byte</span> b1 = <span class="hljs-number">127</span>;<br>b1++;<br>System.out.println(b1);<span class="hljs-comment">//-128</span><br><span class="hljs-comment">// 127补码：0 1 1 1 1 1 1 1   ---&gt; +1   1 0 0 0 0 0 0 0 = -128补码（计算机存储和操作都是补码）</span><br></code></pre></td></tr></table></figure>
+<h2 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h2><ul>
+<li>=、+=、-=、*=、/=、%=</li>
+<li><code>+=、-=、*=、/=、%= 不改变数据的数据类型</code></li>
+</ul>
+<p>练习题：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// += -= *= /=  %=</span><br><span class="hljs-keyword">int</span> num1 = <span class="hljs-number">10</span>;<br>num1 += <span class="hljs-number">2</span>;<br>System.out.println(num1);<span class="hljs-comment">//12</span><br><br><span class="hljs-keyword">int</span> num2 = <span class="hljs-number">12</span>;<br>num2 %= <span class="hljs-number">5</span>;<br>System.out.println(num2);<span class="hljs-comment">//2</span><br><br><span class="hljs-keyword">short</span> s2 = <span class="hljs-number">10</span>;<br><span class="hljs-comment">//编译出错</span><br><span class="hljs-comment">//s2 = s2 + 2;</span><br>s2 += <span class="hljs-number">2</span>;<br>System.out.println(s2);<span class="hljs-comment">//12</span><br><span class="hljs-comment">//开发中 变量实现+2的操作</span><br><span class="hljs-comment">//1 num = num +2;</span><br><span class="hljs-comment">//2 num += 2;（推荐） 不改变数据的数据类型</span><br><br><span class="hljs-comment">//开发中 变量实现+1的操作</span><br><span class="hljs-comment">//1 num = num +1;</span><br><span class="hljs-comment">//2 num += 1;（推荐） 不改变数据的数据类型</span><br><span class="hljs-comment">//3 num++；（推荐）不改变数据的数据类型</span><br></code></pre></td></tr></table></figure>
+<h2 id="比较运算符（关系运算符）"><a href="#比较运算符（关系运算符）" class="headerlink" title="比较运算符（关系运算符）"></a>比较运算符（关系运算符）</h2><ul>
+<li>==、!=、&lt;、&gt;、&lt;=、&gt;=、instanceof</li>
+<li><code>运算结果都为布尔类型</code></li>
+</ul>
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><ul>
+<li>&amp;（逻辑与）</li>
+<li>|（逻辑或）</li>
+<li>!（逻辑非）</li>
+<li>&amp;&amp;（短路与）</li>
+<li>||（短路或）</li>
+<li>^（逻辑异或）相同为false、不同为true</li>
+<li><code>逻辑运算符操作的都为布尔类型的变量</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>a</th>
+<th>b</th>
+<th>a&amp;b</th>
+<th>a&amp;&amp;b</th>
+<th>a|b</th>
+<th>a||b</th>
+<th>!a</th>
+<th>a^b</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>true</td>
+<td>true</td>
+<td>true</td>
+<td>true</td>
+<td>true</td>
+<td>true</td>
+<td>false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>true</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td>true</td>
+<td>true</td>
+<td>false</td>
+<td>true</td>
+</tr>
+<tr>
+<td>false</td>
+<td>true</td>
+<td>false</td>
+<td>false</td>
+<td>true</td>
+<td>true</td>
+<td>true</td>
+<td>true</td>
+</tr>
+<tr>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td>true</td>
+<td>false</td>
+</tr>
+</tbody></table>
+<p>练习题：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//逻辑与&amp;、短路与&amp;&amp;，开发中推荐使用&amp;&amp;</span><br><span class="hljs-comment">//&amp;前面结果为false依然执行&amp;后面的语句</span><br><span class="hljs-comment">//&amp;&amp;前面结果为false就不执行&amp;&amp;后面的语句</span><br><span class="hljs-keyword">boolean</span> b1 = <span class="hljs-keyword">false</span>;<br><span class="hljs-keyword">int</span> num1 = <span class="hljs-number">10</span>;<br><span class="hljs-keyword">if</span>(b1 &amp; (num1++ &gt; <span class="hljs-number">0</span>))&#123;<br>    System.out.println(<span class="hljs-string">&quot;北京&quot;</span>);<br>&#125;<span class="hljs-keyword">else</span> &#123;<br>    System.out.println(<span class="hljs-string">&quot;天津&quot;</span>);<br>&#125;<br>System.out.println(<span class="hljs-string">&quot;num1 = &quot;</span> + num1);<span class="hljs-comment">//11</span><br><br><span class="hljs-keyword">boolean</span> b2 = <span class="hljs-keyword">false</span>;<br><span class="hljs-keyword">int</span> num2 = <span class="hljs-number">10</span>;<br><span class="hljs-keyword">if</span>(b2 &amp;&amp; (num2++ &gt; <span class="hljs-number">0</span>))&#123;<br>    System.out.println(<span class="hljs-string">&quot;北京&quot;</span>);<br>&#125;<span class="hljs-keyword">else</span> &#123;<br>    System.out.println(<span class="hljs-string">&quot;天津&quot;</span>);<br>&#125;<br>System.out.println(<span class="hljs-string">&quot;num2 = &quot;</span> + num2);<span class="hljs-comment">//10</span><br><br><span class="hljs-comment">//逻辑或|、短路或|| 开发中推荐使用||</span><br><span class="hljs-comment">//|前面结果为true依然执行|后面的语句</span><br><span class="hljs-comment">//||前面结果为true就不执行||后面的语句</span><br><span class="hljs-keyword">boolean</span> b3 = <span class="hljs-keyword">true</span>;<br><span class="hljs-keyword">int</span> num3 = <span class="hljs-number">10</span>;<br><span class="hljs-keyword">if</span>(b1 | (num3++ &gt; <span class="hljs-number">0</span>))&#123;<br>    System.out.println(<span class="hljs-string">&quot;北京&quot;</span>);<br>&#125;<span class="hljs-keyword">else</span> &#123;<br>    System.out.println(<span class="hljs-string">&quot;天津&quot;</span>);<br>&#125;<br>System.out.println(<span class="hljs-string">&quot;num3 = &quot;</span> + num3);<span class="hljs-comment">//11</span><br><br><span class="hljs-keyword">boolean</span> b4 = <span class="hljs-keyword">true</span>;<br><span class="hljs-keyword">int</span> num4 = <span class="hljs-number">10</span>;<br><span class="hljs-keyword">if</span>(b4 || (num4++ &gt; <span class="hljs-number">0</span>))&#123;<br>    System.out.println(<span class="hljs-string">&quot;北京&quot;</span>);<br>&#125;<span class="hljs-keyword">else</span> &#123;<br>    System.out.println(<span class="hljs-string">&quot;天津&quot;</span>);<br>&#125;<br>System.out.println(<span class="hljs-string">&quot;num4 = &quot;</span> + num4);<span class="hljs-comment">//10</span><br></code></pre></td></tr></table></figure>
+<h2 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h2><ul>
+<li>&lt;&lt;（左移）左移✖️2</li>
+<li>&gt;&gt;（右移）右移➗2</li>
+<li>&gt;&gt;&gt;（无符号右移）</li>
+<li>&amp;（与运算）</li>
+<li>|（或运算）</li>
+<li>^（异或运算）</li>
+<li>~（取反运算）</li>
+<li><code>位运算是直接对整数的二进制进行的运算</code></li>
+</ul>
+<p>练习题：</p>
+<h2 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h2>
             </div>
             <hr>
             <div>
